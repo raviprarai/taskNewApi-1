@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "7c883bae-0a61-4e0e-a181-3c9040b08d75",
+		"name": "Task Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48079928",
+		"_collection_link": "https://ravi-prakash-815fbe97-7309532.postman.co/workspace/Ravi-Rai's-Workspace~cd33aedd-62ac-46dc-88c8-15e5b9c0887f/collection/48079928-7c883bae-0a61-4e0e-a181-3c9040b08d75?action=share&source=collection_link&creator=48079928"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"fullName\":\"Ravi\",\n   \"email\":\"raviprarasi@gmail.com\",\n   \"phone\":\"7827902352\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/users/createAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"createAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create teacher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"fullName\": \"Amit Sharma\",\n    \"email\": \"amit@example.com\",\n    \"specialization\": \"Mathematics\",\n    \"experience\": 5\n}\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/teachers/createTeacher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"teachers",
+						"createTeacher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createSession",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YWQ2MWJlZWIzNGNkMDhjMjJkMDljNzgiLCJlbWFpbCI6InJhdmlwcmFyYXNzaUBnbWFpbC5jb20iLCJpYXQiOjE3OTI0MTY3NTAsImV4cCI6MTc5MjQ1OTk1MH0.xnRGCuK2h25-sKZhBVM91oqqH_dIx7Hxn2PPnAofQQo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"teacherId\": \"6ad61932853907b5225b662f\",\n    \"startTime\": \"2026-10-25T10:00:00.000Z\",\n    \"endTime\": \"2026-10-25T11:00:00.000Z\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/sessions/createSession",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"sessions",
+						"createSession"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAvailableSessions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YWQ2MWJlZWIzNGNkMDhjMjJkMDljNzgiLCJlbWFpbCI6InJhdmlwcmFyYXNzaUBnbWFpbC5jb20iLCJpYXQiOjE3OTI0MTY3NTAsImV4cCI6MTc5MjQ1OTk1MH0.xnRGCuK2h25-sKZhBVM91oqqH_dIx7Hxn2PPnAofQQo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/sessions/getAvailableSessions?dateTimestamp=1792454400000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"sessions",
+						"getAvailableSessions"
+					],
+					"query": [
+						{
+							"key": "dateTimestamp",
+							"value": "1792454400000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookSession",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YWQ2MWJlZWIzNGNkMDhjMjJkMDljNzgiLCJlbWFpbCI6InJhdmlwcmFyYXNzaUBnbWFpbC5jb20iLCJpYXQiOjE3OTI0MTY3NTAsImV4cCI6MTc5MjQ1OTk1MH0.xnRGCuK2h25-sKZhBVM91oqqH_dIx7Hxn2PPnAofQQo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/sessions/bookSession/6ad61c9ec47933b4bfe8a386",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"sessions",
+						"bookSession",
+						"6ad61c9ec47933b4bfe8a386"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "completeSession",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YWQ2MWJlZWIzNGNkMDhjMjJkMDljNzgiLCJlbWFpbCI6InJhdmlwcmFyYXNzaUBnbWFpbC5jb20iLCJpYXQiOjE3OTI0MTY3NTAsImV4cCI6MTc5MjQ1OTk1MH0.xnRGCuK2h25-sKZhBVM91oqqH_dIx7Hxn2PPnAofQQo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/sessions/completeSession/6ad61c9ec47933b4bfe8a386",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"sessions",
+						"completeSession",
+						"6ad61c9ec47933b4bfe8a386"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserSessions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YWQ2MWJlZWIzNGNkMDhjMjJkMDljNzgiLCJlbWFpbCI6InJhdmlwcmFyYXNzaUBnbWFpbC5jb20iLCJpYXQiOjE3OTI0MTY3NTAsImV4cCI6MTc5MjQ1OTk1MH0.xnRGCuK2h25-sKZhBVM91oqqH_dIx7Hxn2PPnAofQQo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/users/getUserSessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"getUserSessions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
